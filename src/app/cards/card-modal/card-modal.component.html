@@ -1,0 +1,32 @@
+<h2 mat-dialog-title>{{ data ? 'Kartvizit Düzenle' : 'Yeni Kartvizit' }}</h2>
+<mat-dialog-content class="mat-typography">
+  <form [formGroup]="cardForm">
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Title</mat-label>
+      <input matInput formControlName="title">
+    </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Name</mat-label>
+      <input matInput formControlName="name">
+    </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Phone</mat-label>
+      <input matInput formControlName="phone">
+    </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Email</mat-label>
+      <input matInput formControlName="email">
+    </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Address</mat-label>
+      <textarea matInput formControlName="address"></textarea>
+    </mat-form-field>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <div class="flex-grow-1 text-start" *ngIf="data">
+    <button mat-stroked-button color="warning" (click)="deleteCard()">Sil</button>
+  </div>
+  <button mat-button mat-dialog-close>Vazgeç</button>
+  <button mat-button class="bg-primary" (click)="data ? updateCard() : addCard()" [disabled]="cardForm.invalid">{{ data ? 'Düzenle' : 'Ekle' }}</button>
+</mat-dialog-actions>

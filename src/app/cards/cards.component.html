@@ -1,0 +1,26 @@
+<main>
+    <div class="row">
+        <div class="col-12 col-md-8">
+            <h1 class="page-title">Kartvizitler</h1>
+            <p class="page-description">
+                bu ekranda kartvizitleri yönetebilirisiniz
+            </p>
+        </div>
+        <div class="col-12 col-md-4 text-end">
+            <button mat-flat-button color="primary" (click)="openAddCardModal()">Yeni kartvizit ekle</button>
+        </div>
+    </div>
+    
+    <hr/>
+
+    <div class="cards">
+        <div class="row">
+
+            <div class="col-12 col-md-3" *ngFor="let card of cardService.cards">
+                <app-card-item [card]="card"></app-card-item>
+            </div>
+            
+        </div>
+    </div>
+
+</main>
