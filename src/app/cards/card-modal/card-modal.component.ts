@@ -12,14 +12,12 @@ import { Card } from 'src/app/models/card';
   styleUrls: ['./card-modal.component.scss']
 })
 export class CardModalComponent implements OnInit {
-
   cardForm!: FormGroup
-
   constructor(
     private dialogRef: MatDialogRef<CardModalComponent>,
     private fb: FormBuilder,
     private cardService: CardService,
-    private snackbarService: SnackbarService
+    private snackbarService: SnackbarService,
     @Inject(MAT_DIALOG_DATA) public data: Card
   ) { }
 
